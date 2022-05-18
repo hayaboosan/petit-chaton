@@ -25,6 +25,19 @@ def options(app):
     return Migrate(app, db)
 
 
+def login_management(app):
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.login_message = "ログインしてください。"
+    login_manager.login_message_category = "error"
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(id):
+        from app.models.auth import User
+        return User.query.get(id)
+
+
 db = SQLAlchemy()
 session = scoped_session(sessionmaker(
     autocommit=False, autoflush=False, bind=engine))
@@ -40,3 +53,4 @@ db.create_all(app=app)
 migrate = options(app)
 
 import_blueprint(app)
+login_management(app)

@@ -12,15 +12,14 @@ from app import db
 
 
 class LoginForm(FlaskForm):
-    email = EmailField('メールアドレス', validators=[
-        InputRequired('必須です')])
+    email = EmailField('メールアドレス', validators=[InputRequired('必須です')])
 
     password = PasswordField('パスワード')
 
     submit = SubmitField()
 
     def validate_login(self):
-        user = self.get_user_email()
+        user = User.query.filter_by(email=self.email.data).first()
         if user is None or \
                 not check_password_hash(user.password, self.password.data):
             flash('ログイン情報を確認してください', category='error')
@@ -28,5 +27,33 @@ class LoginForm(FlaskForm):
         login_user(user, remember=True)
         return 'ログインしました。'
 
-    def get_user_email(self):
-        return User.query.filter_by(email=self.email.data).first()
+
+class CreateUserForm(FlaskForm):
+    email = EmailField('メールアドレス', validators=[
+        InputRequired('必須です'),
+        Email(message='有効なメールアドレスではありません')])
+
+    name = StringField('ユーザー名', validators=[
+        InputRequired('必須です'),
+        Length(max=20, message='20文字以内で入力してください')])
+
+    password = PasswordField('パスワード', validators=[
+        InputRequired('必須です')])
+
+    submit = SubmitField()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def validate_user(self):
+        is_registered = User.query.filter_by(email=self.email.data).first()
+        if is_registered is not None:
+            flash('メールアドレスが既に存在します。', category='error')
+            return render_template('./auth/create.html', form=self)
+
+        user = User(
+            email=self.email.data, name=self.name.data,
+            password=self.password.data)
+        db.session.add(user)
+        db.session.commit()
+        return 'ユーザーを作成しました。'
