@@ -27,9 +27,17 @@ def create_first():
 
 
 @auth.route('/create', methods=['POST', 'GET'])
-# @login_required
+@login_required
 def create() -> str:
     form = CreateUserForm()
     if form.validate_on_submit():
         return form.validate_user()
     return render_template('./auth/create.html', form=form)
+
+
+@auth.route('/logout')
+@login_required
+def logout() -> str:
+    logout_user()
+    flash('ログアウトしました', category='success')
+    return redirect(url_for('auth.login'))
