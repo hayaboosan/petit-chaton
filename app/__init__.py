@@ -9,12 +9,11 @@ from config import DATABASE_URI, engine
 
 
 def import_blueprint(app):
-    @app.route('/')
-    def home():
-        return redirect(url_for('auth.login'))
-
     from app.auth import auth
     app.register_blueprint(auth, url_prefix='/auth')
+
+    from app.main import main
+    app.register_blueprint(main, url_prefix='/')
 
 
 def options(app):
