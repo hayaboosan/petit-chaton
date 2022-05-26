@@ -1,6 +1,14 @@
 {% extends "main/base.html" %} {% block title %}ホーム{% endblock %} {% block
 content %}
-<div class="row">
+<div>
+    <img
+        src="../static/images/items/main/PCwebsite-main.jpg"
+        alt="メイン画像"
+        style="width: 100%; object-fit: cover"
+    />
+</div>
+<div class="row mt-5">
+    <h1 class="text-center">COLLECTION</h1>
     <a
         class="card mb-3 col-md-6 text-dark text-decoration-none"
         style="max-width: 100%"
@@ -49,5 +57,21 @@ content %}
             </div>
         </div>
     </a>
+</div>
+<div class="mt-5">
+    <img
+        src="../static/images/items/main/PCwebsite-concept.jpg"
+        alt="ブランドコンセプト画像"
+        style="width: 100%; object-fit: cover"
+    />
+    <div class="mx-auto" style="max-width: 530px">
+        <p>
+            Petit Chaton（プチシャトン）とは『小さな愛らしい子猫』という意味。
+        </p>
+        <p>あなたを見つめる無邪気な子猫のように、つい心惹かれてしまうような</p>
+        <p>その愛らしさに、見ているだけで幸せな気持ちになれるような</p>
+        <p>ずっと大切にそばに置いておきたくなる</p>
+        <p>そんなキャットモチーフのジュエリーをお届けします。</p>
+    </div>
 </div>
 {% endblock %}
