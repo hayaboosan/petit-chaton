@@ -1,20 +1,46 @@
 .navbar-toggler {
-    border:0px;
+    border: 0px;
 }
 
 .navbar-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-h1,h2,h3,h4,h5,h6{
+h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', serif;
 }
 
-p,small{
+p, small {
     font-family: 'Noto Serif JP', serif;
-    color:#333;
+    color: #333;
 }
 
-.card > h1,h2,h3,h4,h5,h6{
-    color:#333;
+.card>h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+.head-border {
+    display: flex;
+    align-items: center;
+}
+
+.head-border:before,
+.head-border:after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background-color: rgba(171, 172, 112, 1);
+}
+
+.head-border:before {
+    margin-right: 1rem;
+}
+
+.head-border:after {
+    margin-left: 1rem;
+}
+
+.more-button {
+    color: rgba(171, 172, 112, 1);
+    font-weight: bold;
 }
