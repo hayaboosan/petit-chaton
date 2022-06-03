@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -37,6 +37,11 @@ def login_management(app):
         return User.query.get(id)
 
 
+def setup_admin(app):
+    from app.auth import admin
+    admin.setup_admin(app)
+
+
 db = SQLAlchemy()
 session = scoped_session(sessionmaker(
     autocommit=False, autoflush=False, bind=engine))
@@ -51,5 +56,6 @@ db.init_app(app)
 db.create_all(app=app)
 migrate = options(app)
 
+setup_admin(app)
 import_blueprint(app)
 login_management(app)
