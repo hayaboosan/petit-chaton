@@ -16,7 +16,7 @@ class MyModelView(ModelView):
         return current_user.is_authenticated
 
     def inaccessible_callback(self, name, **kwargs):
-        flash('管理者ユーザーにログインしてください。', category='error')
+        flash('ログインしてください。', category='error')
         return redirect(url_for('auth.login'))
 
 
@@ -30,7 +30,7 @@ class MyUserView(ModelView):
         return current_user.is_authenticated
 
     def inaccessible_callback(self, name, **kwargs):
-        flash('管理者ユーザーにログインしてください。', category='error')
+        flash('ログインしてください。', category='error')
         return redirect(url_for('auth.login'))
 
 
@@ -39,7 +39,7 @@ class MyAdminIndexView(AdminIndexView):
         return current_user.is_authenticated
 
     def inaccessible_callback(self, name, **kwargs):
-        flash('管理者ユーザーにログインしてください。', category='error')
+        flash('ログインしてください。', category='error')
         return redirect(url_for('auth.login'))
 
 
