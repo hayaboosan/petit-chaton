@@ -7,9 +7,9 @@ class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255))
     alt = db.Column(db.String(255))
-    text = db.Column(db.String(255))
-    shop_url = db.Column(db.String(255))
-    image_url = db.Column(db.String(255))
+    text = db.Column(db.Text)
+    shop_url = db.Column(db.Text)
+    image_url = db.Column(db.Text)
 
     def __init__(
             self, id=None, title=None, alt=None, text=None,
