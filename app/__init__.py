@@ -51,6 +51,7 @@ app.config['SECRET_KEY'] = os.urandom(24)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'pool_pre_ping': True}
 
 db.init_app(app)
 db.create_all(app=app)
