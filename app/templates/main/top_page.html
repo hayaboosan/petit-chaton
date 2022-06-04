@@ -12,23 +12,20 @@ content %}
         target="_blank"
         rel="noopener noreferrer"
     >
-        <div class="row g-0">
-            <div class="">
+        <div class="row g-0 item-card">
+            <div>
                 <img
                     src="{{item.image_url}}"
                     alt="{{item.alt}}"
                     class="card-img-top"
-                    style="height: 100%; object-fit: cover; padding: 30px"
                 />
             </div>
-            <div class="">
-                <div class="card-body" style="padding: 0px 30px">
-                    <h5 class="card-title">{{item.title}}</h5>
-                    <p class="card-text">
-                        {{item.text.replace("\n", "<br />") | safe}}
-                    </p>
-                    <p class="my-3 text-center more-button">more ></p>
-                </div>
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">
+                    {{item.text.replace("\n", "<br />") | safe}}
+                </p>
+                <p class="my-3 text-center more-button">more ></p>
             </div>
         </div>
     </a>

@@ -76,3 +76,12 @@ p {
 }
 
 /* ナビゲーションバーのボタン ここまで */
+
+.card-img-top {
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-card {
+    margin: 30px;
+}
