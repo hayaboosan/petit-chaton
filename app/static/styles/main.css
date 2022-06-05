@@ -1,3 +1,4 @@
+/* ハンバーガーメニューの色変更 ここから */
 .navbar-toggler {
     border: 0px;
 }
@@ -6,11 +7,13 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+/* ハンバーガーメニューの色変更 ここまで */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', serif;
 }
 
-p, small {
+p {
     font-family: 'Noto Serif JP', serif;
     color: #333;
 }
@@ -19,17 +22,15 @@ p, small {
     color: #333;
 }
 
-.head-border {
-    display: flex;
-    align-items: center;
-}
+/* コレクション、コンセプトの線 ここから */
+
 
 .head-border:before,
 .head-border:after {
     content: "";
     height: 1px;
     flex-grow: 1;
-    background-color: rgba(171, 172, 112, 1);
+    background-color: rgb(171, 172, 112);
 }
 
 .head-border:before {
@@ -40,7 +41,122 @@ p, small {
     margin-left: 1rem;
 }
 
+/* コレクション、コンセプトの線 ここまで */
+
 .more-button {
-    color: rgba(171, 172, 112, 1);
+    color: rgb(171, 172, 112);
     font-weight: bold;
 }
+
+/* ナビゲーションバーのボタン ここから */
+.btn-border {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-border::after {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: white;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.btn-border:hover::after {
+    transform: scale(1, 1);
+}
+
+/* ナビゲーションバーのボタン ここまで */
+
+/* moreボタン ここから */
+.card-btn {
+    text-align: center;
+}
+
+.more-button {
+    font-family: 'Noto Serif JP', serif;
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.card-body .more-button::after {
+    position: absolute;
+    bottom: 0px;
+    left: -7px;
+    content: '';
+    width: 120%;
+    height: 1px;
+    background-color: rgb(171, 172, 112);
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.card-body:hover .more-button::after {
+    transform-origin: center top;
+    transform: scale(1, 1);
+}
+
+.card-title {
+    font-family: 'Noto Serif JP', serif;
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.card-body .card-title::after {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.card-body:hover .card-title::after {
+    transform-origin: center top;
+    transform: scale(1, 1);
+}
+
+/* moreボタン ここまで */
+
+/* 商品画像拡大 ここから */
+.item-card {
+    margin: 30px;
+}
+
+.card-img {
+    cursor: pointer;
+    max-width: 500px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.card-img img {
+    height: auto;
+    transition: transform .6s ease;
+    /* ゆっくり変化させる */
+    width: 100%;
+}
+
+.card-img:hover img {
+    transform: scale(1.1);
+    /* 拡大 */
+}
+
+/* 商品画像拡大 ここまで */

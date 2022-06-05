@@ -1,57 +1,44 @@
 {% extends "main/base.html" %} {% block title %}ホーム{% endblock %} {% block
-content %}
-<div class="row mt-5">
-    <h1 class="text-center head-border" style="color: rgba(171, 172, 112, 1)">
-        COLLECTION
-    </h1>
-    {% for item in items %}
-    <a
-        class="card mb-3 col-md-6 text-dark text-decoration-none border border-0"
-        style="max-width: 100%"
-        href="{{item.shop_url}}"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <div class="row g-0">
-            <div class="">
-                <img
-                    src="{{item.image_url}}"
-                    alt="{{item.alt}}"
-                    class="card-img-top"
-                    style="height: 100%; object-fit: cover; padding: 30px"
-                />
-            </div>
-            <div class="">
-                <div class="card-body" style="padding: 0px 30px">
-                    <h5 class="card-title">{{item.title}}</h5>
+content %} {% include "main/main_img.html" %}
+<div class="container">
+    <div class="row mt-5">
+        <h1
+            class="text-center head-border"
+            style="color: rgba(171, 172, 112, 1)"
+        >
+            COLLECTION
+        </h1>
+        {% for item in items %}
+        <a
+            class="card mb-3 col-md-6 text-dark text-decoration-none border border-0"
+            style="max-width: 100%"
+            href="{{item.shop_url}}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <div class="row g-0 item-card">
+                <div class="card-img">
+                    <img
+                        src="{{item.image_url}}"
+                        alt="{{item.alt}}"
+                        class="card-img-top"
+                    />
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5>{{item.title}}</h5>
+                    </div>
                     <p class="card-text">
                         {{item.text.replace("\n", "<br />") | safe}}
                     </p>
-                    <p class="my-3 text-center more-button">more ></p>
+                    <div class="my-4 card-btn">
+                        <div class="more-button">more ></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </a>
-    {% endfor %}
-</div>
-<div class="mt-5">
-    <h1 class="text-center head-border" style="color: rgba(171, 172, 112, 1)">
-        CONCEPT
-    </h1>
-    <div class="mx-auto mt-3" style="max-width: 590px; padding: 0 30px">
-        <p>
-            Petit Chaton（プチシャトン）とは『小さな愛らしい子猫』という意味。
-        </p>
-        <p>あなたを見つめる無邪気な子猫のように、つい心惹かれてしまうような</p>
-        <p>その愛らしさに、見ているだけで幸せな気持ちになれるような</p>
-        <p>ずっと大切にそばに置いておきたくなる</p>
-        <p>そんなキャットモチーフのジュエリーをお届けします。</p>
+        </a>
+        {% endfor %}
     </div>
-    <img
-        src="http://res.cloudinary.com/hkg08nm4g/image/upload/v1654290969/concept.jpg"
-        alt="ブランドコンセプト画像"
-        style="width: 100%; max-width: 900px; object-fit: cover"
-        class="d-block mx-auto"
-    />
+    {% include "main/concept.html" %}
 </div>
 {% endblock %}
