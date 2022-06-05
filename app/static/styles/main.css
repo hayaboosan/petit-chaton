@@ -23,10 +23,7 @@ p {
 }
 
 /* コレクション、コンセプトの線 ここから */
-.head-border {
-    display: flex;
-    align-items: center;
-}
+
 
 .head-border:before,
 .head-border:after {
@@ -77,6 +74,7 @@ p {
 
 /* ナビゲーションバーのボタン ここまで */
 
+/* 商品画像 ここから */
 .card-img-top {
     height: 100%;
     object-fit: cover;
@@ -109,3 +107,39 @@ p {
 .card-img:hover::before {
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
 }
+
+/* 商品画像 ここまで */
+
+/* moreボタン ここから */
+.card-btn {
+    text-align: center;
+}
+
+.more-button {
+    font-family: 'Noto Serif JP', serif;
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.card-body .more-button::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: rgba(171, 172, 112, 1);
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.card-body:hover .more-button::after {
+    transform-origin: center top;
+    transform: scale(1, 1);
+}
+
+/* moreボタン ここまで */

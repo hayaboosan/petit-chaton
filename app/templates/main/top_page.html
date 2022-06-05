@@ -29,7 +29,9 @@ content %} {% include "main/main_img.html" %}
                     <p class="card-text">
                         {{item.text.replace("\n", "<br />") | safe}}
                     </p>
-                    <p class="my-3 text-center more-button">more ></p>
+                    <div class="my-4 card-btn">
+                        <div class="more-button">more ></div>
+                    </div>
                 </div>
             </div>
         </a>
