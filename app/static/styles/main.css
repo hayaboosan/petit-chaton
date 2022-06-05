@@ -30,7 +30,7 @@ p {
     content: "";
     height: 1px;
     flex-grow: 1;
-    background-color: rgba(171, 172, 112, 1);
+    background-color: rgb(171, 172, 112);
 }
 
 .head-border:before {
@@ -44,7 +44,7 @@ p {
 /* コレクション、コンセプトの線 ここまで */
 
 .more-button {
-    color: rgba(171, 172, 112, 1);
+    color: rgb(171, 172, 112);
     font-weight: bold;
 }
 
@@ -97,10 +97,10 @@ p {
     height: 100%;
     content: "";
     background:
-        linear-gradient(to right, rgba(171, 172, 112, 1), rgba(171, 172, 112, 1), rgba(0, 145, 255, 0)) 200% 0 / 200% 3px no-repeat,
-        linear-gradient(to bottom, rgba(171, 172, 112, 1), rgba(171, 172, 112, 1), rgba(0, 145, 255, 0)) 100% 200% / 3px 200% no-repeat,
-        linear-gradient(to left, rgba(171, 172, 112, 1), rgba(171, 172, 112, 1), rgba(0, 145, 255, 0)) -200% 100% / 200% 3px no-repeat,
-        linear-gradient(to top, rgba(171, 172, 112, 1), rgba(171, 172, 112, 1), rgba(0, 145, 255, 0)) 0 -200% / 3px 200% no-repeat;
+        linear-gradient(to right, rgb(171, 172, 112), rgb(171, 172, 112), rgba(0, 145, 255, 0)) 200% 0 / 200% 3px no-repeat,
+        linear-gradient(to bottom, rgb(171, 172, 112), rgb(171, 172, 112), rgba(0, 145, 255, 0)) 100% 200% / 3px 200% no-repeat,
+        linear-gradient(to left, rgb(171, 172, 112), rgb(171, 172, 112), rgba(0, 145, 255, 0)) -200% 100% / 200% 3px no-repeat,
+        linear-gradient(to top, rgb(171, 172, 112), rgb(171, 172, 112), rgba(0, 145, 255, 0)) 0 -200% / 3px 200% no-repeat;
     transition: background-position 0.6s;
 }
 
@@ -131,7 +131,7 @@ p {
     content: '';
     width: 120%;
     height: 1px;
-    background-color: rgba(171, 172, 112, 1);
+    background-color: rgb(171, 172, 112);
     transform: scale(0, 1);
     transform-origin: center top;
     transition: transform .3s;
