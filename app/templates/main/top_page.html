@@ -25,7 +25,9 @@ content %} {% include "main/main_img.html" %}
                     />
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{item.title}}</h5>
+                    <div class="card-title">
+                        <h5>{{item.title}}</h5>
+                    </div>
                     <p class="card-text">
                         {{item.text.replace("\n", "<br />") | safe}}
                     </p>
