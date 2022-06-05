@@ -87,11 +87,11 @@ p {
 }
 
 
-.item-card {
+.card-img {
     position: relative;
 }
 
-.item-card::before {
+.card-img::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -106,6 +106,6 @@ p {
     transition: background-position 0.6s;
 }
 
-.item-card:hover::before {
+.card-img:hover::before {
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
 }
