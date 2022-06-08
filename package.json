@@ -10,9 +10,8 @@
         "tailwindcss": "^3.0.24"
     },
     "scripts": {
-        "dev": "postcss ./app/static/styles/input.css -o ./app/static/styles/output.css",
-        "build": "NODE_ENV=production postcss ./app/static/styles/input.css -o ./app/static/styles/output.css",
-        "watch": "watch 'npm run dev' ./app/templates/"
+        "dev": "TEILWIND_MODE=watch postcss ./app/static/styles/input.css -o ./app/static/styles/output.css -w",
+        "build": "NODE_ENV=production postcss ./app/static/styles/input.css -o ./app/static/styles/output.css"
     },
     "repository": {
         "type": "git",
