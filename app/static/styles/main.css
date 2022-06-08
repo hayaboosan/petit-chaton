@@ -9,7 +9,12 @@
 
 /* ハンバーガーメニューの色変更 ここまで */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'EB Garamond', serif;
 }
 
@@ -18,16 +23,24 @@ p {
     color: #333;
 }
 
-.card>h1, h2, h3, h4, h5, h6 {
+.card > h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #333;
 }
 
 /* コレクション、コンセプトの線 ここから */
-
+.head-border {
+    display: flex;
+    align-items: center;
+}
 
 .head-border:before,
 .head-border:after {
-    content: "";
+    content: '';
     height: 1px;
     flex-grow: 1;
     background-color: rgb(171, 172, 112);
@@ -65,7 +78,7 @@ p {
     background: white;
     transform: scale(0, 1);
     transform-origin: center top;
-    transition: transform .3s;
+    transition: transform 0.3s;
 }
 
 .btn-border:hover::after {
@@ -98,7 +111,7 @@ p {
     background-color: rgb(171, 172, 112);
     transform: scale(0, 1);
     transform-origin: center top;
-    transition: transform .3s;
+    transition: transform 0.3s;
 }
 
 .card-body:hover .more-button::after {
@@ -125,7 +138,7 @@ p {
     background-color: #333;
     transform: scale(0, 1);
     transform-origin: center top;
-    transition: transform .3s;
+    transition: transform 0.3s;
 }
 
 .card-body:hover .card-title::after {
@@ -149,7 +162,7 @@ p {
 
 .card-img img {
     height: auto;
-    transition: transform .6s ease;
+    transition: transform 0.6s ease;
     /* ゆっくり変化させる */
     width: 100%;
 }
