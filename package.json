@@ -25,6 +25,7 @@
     },
     "homepage": "https://github.com/hayaboosan/petit-chaton#readme",
     "dependencies": {
+        "flowbite": "^1.4.7",
         "watch": "^1.0.2"
     }
 }

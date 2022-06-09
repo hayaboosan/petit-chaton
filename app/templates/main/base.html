@@ -20,10 +20,15 @@
             rel="icon"
             href="http://res.cloudinary.com/hkg08nm4g/image/upload/v1654292189/favicon.gif"
         />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"
+        />
     </head>
     <body>
         <header>{% include "main/navbar.html" %}</header>
         <main>{% block content %} {% endblock %}</main>
         <footer>{% include "main/footer.html" %}</footer>
+        <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     </body>
 </html>
