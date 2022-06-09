@@ -20,10 +20,10 @@
             rel="icon"
             href="http://res.cloudinary.com/hkg08nm4g/image/upload/v1654292189/favicon.gif"
         />
-
     </head>
     <body>
-        {% include "main/navbar.html" %} {% block content %} {% endblock %} {%
-        include "main/footer.html" %}
+        <header>{% include "main/navbar.html" %}</header>
+        <main>{% block content %} {% endblock %}</main>
+        <footer>{% include "main/footer.html" %}</footer>
     </body>
 </html>
