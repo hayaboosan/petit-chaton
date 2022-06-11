@@ -17,10 +17,15 @@ content %}
                 class="col-span-full md:col-span-1 mx-auto max-w-xl bg-white rounded-lg border border-gray-200 shadow-md"
             >
                 <a href="#">
-                    <img class="rounded-t-lg" src="{{item.image_url}}" />
-                    <div class="p-5">
+                    <div class="overflow-hidden">
+                        <img
+                            class="rounded-t-lg hover:scale-110 transition-all duration-300"
+                            src="{{item.image_url}}"
+                        />
+                    </div>
+                    <div class="p-5 group">
                         <h5
-                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
                         >
                             {{item.title}}
                         </h5>
