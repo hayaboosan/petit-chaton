@@ -11,65 +11,30 @@ content %}
         >
             COLLECTION
         </h1>
-        {% for item in items %}
-        <div
-            class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-        >
-            <a href="#">
-                <img class="rounded-t-lg" src="{{item.image_url}}" />
-                <div class="p-5">
-                    <h5
-                        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                    >
-                        {{item.title}}
-                    </h5>
-                    <p
-                        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
-                    >
-                        {{item.text.replace("\n", "<br />") | safe}}
-                    </p>
-                    <p class="text-[#ABAC70] text-center">more ></p>
-                </div>
-            </a>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="row mt-5">
-        <h1
-            class="mb-2 px-3 text-[#ABAC70] text-5xl items-center flex before:content-[''] before:h-[1px] before:grow before:bg-[#ABAC70] before:mr-4 after:content-[''] after:h-[1px] after:grow after:bg-[#ABAC70] after:ml-4"
-        >
-            COLLECTION
-        </h1>
-        {% for item in items %}
-        <a
-            class="card mb-3 grid-cols-6 text-dark text-decoration-none"
-            style="max-width: 100%"
-            href="{{item.shop_url}}"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="row g-0 item-card">
-                <div class="card-img">
-                    <img
-                        src="{{item.image_url}}"
-                        alt="{{item.alt}}"
-                        class="card-img-top"
-                    />
-                </div>
-                <div class="card-body">
-                    <div class="card-title">
-                        <h5>{{item.title}}</h5>
+        <div class="grid grid-cols-2 gap-4">
+            {% for item in items %}
+            <div
+                class="col-span-full md:col-span-1 mx-auto max-w-xl bg-white rounded-lg border border-gray-200 shadow-md"
+            >
+                <a href="#">
+                    <img class="rounded-t-lg" src="{{item.image_url}}" />
+                    <div class="p-5">
+                        <h5
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            {{item.title}}
+                        </h5>
+                        <p
+                            class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                        >
+                            {{item.text.replace("\n", "<br />") | safe}}
+                        </p>
+                        <p class="text-[#ABAC70] text-center">more ></p>
                     </div>
-                    <p class="card-text">
-                        {{item.text.replace("\n", "<br />") | safe}}
-                    </p>
-                    <div class="my-4 card-btn">
-                        <div class="more-button">more ></div>
-                    </div>
-                </div>
+                </a>
             </div>
-        </a>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
     {% include "main/concept.html" %}
 </div>
