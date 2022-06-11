@@ -1,11 +1,12 @@
 {% extends "main/base.html" %} {% block title %}ホーム{% endblock %} {% block
-content %} {% include "main/main_img.html" %}
+content %}
+<img
+    src="https://res.cloudinary.com/hkg08nm4g/image/upload/v1654205956/main.jpg"
+    class="w-full object-cover"
+/>
 <div class="container">
     <div class="row mt-5">
-        <h1
-            class="text-center head-border"
-            style="color: rgb(171, 172, 112)"
-        >
+        <h1 class="text-center head-border" style="color: rgb(171, 172, 112)">
             COLLECTION
         </h1>
         {% for item in items %}
