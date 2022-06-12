@@ -7,32 +7,32 @@ content %}
 <div class="container mx-auto max-w-5xl px-2">
     <div class="row mt-5">
         <h1
-            class="mt-12 mb-12 font-petitEn px-3 text-[#ABAC70] text-4xl items-center flex before:content-[''] before:h-[1px] before:grow before:bg-[#ABAC70] before:mr-4 after:content-[''] after:h-[1px] after:grow after:bg-[#ABAC70] after:ml-4"
+            class="mt-12 mb-12 flex items-center px-3 font-petitEn text-4xl text-[#ABAC70] before:mr-4 before:h-[1px] before:grow before:bg-[#ABAC70] before:content-[''] after:ml-4 after:h-[1px] after:grow after:bg-[#ABAC70] after:content-['']"
         >
             COLLECTION
         </h1>
         <div class="grid grid-cols-2 gap-4">
             {% for item in items %}
             <div
-                class="col-span-full md:col-span-1 mx-auto max-w-xl bg-white rounded-lg border border-gray-200 shadow-md group"
+                class="group col-span-full mx-auto max-w-xl rounded-lg border border-gray-200 bg-white shadow-md md:col-span-1"
             >
                 <a href="#">
                     <div class="overflow-hidden">
                         <img
-                            class="rounded-t-lg group-hover:scale-110 transition-all duration-300"
+                            class="rounded-t-lg transition-all duration-300 group-hover:scale-110"
                             src="{{item.image_url}}"
                         />
                     </div>
-                    <div class="p-5 group">
+                    <div class="group p-5">
                         <h5
-                            class="font-petitEn mb-2 text-2xl tracking-tight text-[#333]"
+                            class="mb-2 font-petitEn text-2xl tracking-tight text-[#333]"
                         >
                             {{item.title}}
                         </h5>
                         <p class="mb-3 font-normal text-[#333]">
                             {{item.text.replace("\n", "<br />") | safe}}
                         </p>
-                        <p class="text-[#ABAC70] text-center text-lg">more ></p>
+                        <p class="text-center text-lg text-[#ABAC70]">more ></p>
                     </div>
                 </a>
             </div>
