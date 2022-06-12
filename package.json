@@ -1,0 +1,33 @@
+{
+    "name": "petit-chaton",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "devDependencies": {
+        "autoprefixer": "^10.4.7",
+        "cssnano": "^5.1.11",
+        "postcss-cli": "^9.1.0",
+        "prettier": "^2.6.2",
+        "prettier-plugin-tailwindcss": "^0.1.11",
+        "tailwindcss": "^3.0.24"
+    },
+    "scripts": {
+        "dev": "TEILWIND_MODE=watch postcss ./app/static/styles/input.css -o ./app/static/styles/output.css -w",
+        "build": "NODE_ENV=production postcss ./app/static/styles/input.css -o ./app/static/styles/output.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hayaboosan/petit-chaton.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/hayaboosan/petit-chaton/issues"
+    },
+    "homepage": "https://github.com/hayaboosan/petit-chaton#readme",
+    "dependencies": {
+        "flowbite": "^1.4.7",
+        "watch": "^1.0.2"
+    }
+}

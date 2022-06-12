@@ -1,43 +1,43 @@
 {% extends "main/base.html" %} {% block title %}ホーム{% endblock %} {% block
-content %} {% include "main/main_img.html" %}
-<div class="container">
+content %}
+<img
+    src="https://res.cloudinary.com/hkg08nm4g/image/upload/v1654205956/main.jpg"
+    class="w-full object-cover"
+/>
+<div class="container mx-auto max-w-5xl px-2">
     <div class="row mt-5">
         <h1
-            class="text-center head-border"
-            style="color: rgb(171, 172, 112)"
+            class="mt-12 mb-12 flex items-center px-3 font-petitEn text-4xl text-[#ABAC70] before:mr-4 before:h-[1px] before:grow before:bg-[#ABAC70] before:content-[''] after:ml-4 after:h-[1px] after:grow after:bg-[#ABAC70] after:content-['']"
         >
             COLLECTION
         </h1>
-        {% for item in items %}
-        <a
-            class="card mb-3 col-md-6 text-dark text-decoration-none border border-0"
-            style="max-width: 100%"
-            href="{{item.shop_url}}"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="row g-0 item-card">
-                <div class="card-img">
-                    <img
-                        src="{{item.image_url}}"
-                        alt="{{item.alt}}"
-                        class="card-img-top"
-                    />
-                </div>
-                <div class="card-body">
-                    <div class="card-title">
-                        <h5>{{item.title}}</h5>
+        <div class="grid grid-cols-2 gap-4">
+            {% for item in items %}
+            <div
+                class="group col-span-full mx-auto max-w-xl rounded-lg border border-gray-200 bg-white shadow-md md:col-span-1"
+            >
+                <a href="#">
+                    <div class="overflow-hidden">
+                        <img
+                            class="rounded-t-lg transition-all duration-300 group-hover:scale-110"
+                            src="{{item.image_url}}"
+                        />
                     </div>
-                    <p class="card-text">
-                        {{item.text.replace("\n", "<br />") | safe}}
-                    </p>
-                    <div class="my-4 card-btn">
-                        <div class="more-button">more ></div>
+                    <div class="group p-5">
+                        <h5
+                            class="mb-2 font-petitEn text-2xl tracking-tight text-[#333]"
+                        >
+                            {{item.title}}
+                        </h5>
+                        <p class="mb-3 font-normal text-[#333]">
+                            {{item.text.replace("\n", "<br />") | safe}}
+                        </p>
+                        <p class="text-center text-lg text-[#ABAC70]">more ></p>
                     </div>
-                </div>
+                </a>
             </div>
-        </a>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
     {% include "main/concept.html" %}
 </div>
