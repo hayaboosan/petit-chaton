@@ -4,7 +4,12 @@ module.exports = {
         './node_modules/flowbite/**/*.js',
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                petitEn: ['EB Garamond', 'serif'],
+                petitJa: ['Noto Serif JP', 'serif'],
+            },
+        },
     },
     plugins: [require('flowbite/plugin')],
 };
