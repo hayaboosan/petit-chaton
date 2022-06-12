@@ -14,25 +14,25 @@ content %}
         <div class="grid grid-cols-2 gap-4">
             {% for item in items %}
             <div
-                class="col-span-full md:col-span-1 mx-auto max-w-xl bg-white rounded-lg border border-gray-200 shadow-md"
+                class="col-span-full md:col-span-1 mx-auto max-w-xl bg-white rounded-lg border border-gray-200 shadow-md group"
             >
                 <a href="#">
                     <div class="overflow-hidden">
                         <img
-                            class="rounded-t-lg hover:scale-110 transition-all duration-300"
+                            class="rounded-t-lg group-hover:scale-110 transition-all duration-300"
                             src="{{item.image_url}}"
                         />
                     </div>
                     <div class="p-5 group">
                         <h5
-                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
+                            class="mb-2 text-2xl font-bold tracking-tight text-[#333]"
                         >
                             {{item.title}}
                         </h5>
-                        <p class="mb-3 font-normal text-gray-700">
+                        <p class="mb-3 font-normal text-[#333]">
                             {{item.text.replace("\n", "<br />") | safe}}
                         </p>
-                        <p class="text-[#ABAC70] text-center">more ></p>
+                        <p class="text-[#ABAC70] text-center text-lg">more ></p>
                     </div>
                 </a>
             </div>
