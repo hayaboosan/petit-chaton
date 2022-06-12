@@ -7,19 +7,19 @@ content %}
 <div class="container mx-auto max-w-4xl px-7">
     <div class="row mt-5">
         <h1
-            class="mt-12 mb-12 flex items-center px-3 font-petitEn text-2xl text-[#ABAC70] before:mr-4 before:h-[1px] before:grow before:bg-[#ABAC70] before:content-[''] after:ml-4 after:h-[1px] after:grow after:bg-[#ABAC70] after:content-[''] md:text-4xl"
+            class="my-6 flex items-center font-petitEn text-2xl text-[#ABAC70] before:mr-4 before:h-[1px] before:grow before:bg-[#ABAC70] before:content-[''] after:ml-4 after:h-[1px] after:grow after:bg-[#ABAC70] after:content-[''] md:text-4xl"
         >
             COLLECTION
         </h1>
         <div class="grid grid-cols-2 gap-4">
             {% for item in items %}
             <div
-                class="group col-span-full mx-auto max-w-lg rounded-lg bg-white md:col-span-1"
+                class="group col-span-full mx-auto max-w-lg bg-white md:col-span-1"
             >
                 <a href="#">
                     <div class="overflow-hidden">
                         <img
-                            class="rounded-t-lg transition-all duration-300 group-hover:scale-110"
+                            class="transition-all duration-300 group-hover:scale-110"
                             src="{{item.image_url}}"
                         />
                     </div>
@@ -33,7 +33,7 @@ content %}
                             {{item.text.replace("\n", "<br />") | safe}}
                         </p>
                         <p
-                            class="text-center font-petitEn text-2xl font-bold text-[#ABAC70]"
+                            class="text-center font-petitEn text-2xl text-[#ABAC70]"
                         >
                             more >
                         </p>
@@ -43,6 +43,5 @@ content %}
             {% endfor %}
         </div>
     </div>
-    {% include "main/concept.html" %}
 </div>
-{% endblock %}
+{% include "main/concept.html" %} {% endblock %}
