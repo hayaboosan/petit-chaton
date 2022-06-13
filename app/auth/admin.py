@@ -4,7 +4,7 @@ from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 
 from app import db
-from app.models import User, Item
+from app.models import User, Item, NavLink
 
 
 class MyModelView(ModelView):
@@ -48,3 +48,4 @@ def setup_admin(app):
 
     admin.add_view(MyUserView(User, db.session))
     admin.add_view(MyModelView(Item, db.session))
+    admin.add_view(MyModelView(NavLink, db.session))
