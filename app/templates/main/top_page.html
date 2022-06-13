@@ -14,7 +14,11 @@ content %}
         <div class="grid grid-cols-2 md:gap-20 md:px-24">
             {% for item in items %}
             <div class="group col-span-full mx-auto bg-white md:col-span-1">
-                <a href="{{item.shop_url}}">
+                <a
+                    href="{{item.shop_url}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <div class="overflow-hidden">
                         <img
                             class="transition-all duration-700 group-hover:scale-110"
