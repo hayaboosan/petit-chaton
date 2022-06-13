@@ -44,38 +44,21 @@
             <ul
                 class="mt-4 flex flex-col pl-3 md:mt-0 md:flex-row md:space-x-8"
             >
+                {% for nav_link in nav_links %}
                 <li>
                     <a
                         class="md: group inline-block md:pt-1"
-                        href="https://www.amazon.co.jp/s?me=A2ONY0P3RXK8ZB&marketplaceID=A1VC38T7YXB528"
+                        href="{{nav_link.link_url}}"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <img
-                            src="http://res.cloudinary.com/hkg08nm4g/image/upload/v1654291509/icon-shop.gif"
-                            class="h-7 pt-1"
-                        />
+                        <img src="{{nav_link.image_url}}" class="h-7 pt-1" />
                         <div
                             class="mt-0.5 block w-0 border-b-[1.5px] border-white transition-all duration-200 md:group-hover:w-full"
                         ></div>
                     </a>
                 </li>
-                <li>
-                    <a
-                        class="group inline-block md:pt-1"
-                        href="https://www.instagram.com/petitchaton_pc/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="http://res.cloudinary.com/hkg08nm4g/image/upload/v1654291577/icon-instagram.gif"
-                            class="h-7 pt-1"
-                        />
-                        <div
-                            class="mt-0.5 block w-0 border-b-[1.5px] border-white transition-all duration-200 md:group-hover:w-full"
-                        ></div>
-                    </a>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
