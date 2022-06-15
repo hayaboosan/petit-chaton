@@ -25,7 +25,7 @@ class LoginForm(FlaskForm):
             flash('ログイン情報を確認してください', category='error')
             return redirect(url_for('auth.login'))
         login_user(user, remember=True)
-        return redirect(url_for('admin.index'))
+        return redirect(url_for('auth.index'))
 
 
 class CreateUserForm(FlaskForm):
