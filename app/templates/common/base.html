@@ -18,9 +18,13 @@
         />
     </head>
     <body>
-        {% include "common/navbar.html" %} {% include "common/flash_msg.html" %}
-
-        <div>{% block content %} {% endblock %}</div>
+        <div class="flex">
+            {% include "common/sidebar.html" %}
+            <div>
+                {% include "common/flash_msg.html" %} {% block content %} {%
+                endblock %}
+            </div>
+        </div>
     </body>
     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 </html>
