@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, flash
-from flask_login import logout_user, login_required
+from flask_login import logout_user, login_required, current_user
 
 from app import db
 from app.models.auth import User
@@ -12,7 +12,7 @@ auth = Blueprint('auth', __name__)
 @auth.route('/')
 @login_required
 def index():
-    return render_template('./auth/index.html')
+    return render_template('./auth/index.html', user=current_user)
 
 
 @auth.route('/login', methods=['GET', 'POST'])
