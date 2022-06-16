@@ -9,6 +9,12 @@ from app.forms.auth import LoginForm, CreateUserForm
 auth = Blueprint('auth', __name__)
 
 
+@auth.route('/')
+@login_required
+def index():
+    return render_template('./auth/index.html')
+
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login() -> str:
     create_first()
