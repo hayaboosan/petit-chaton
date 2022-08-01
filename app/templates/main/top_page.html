@@ -1,9 +1,24 @@
 {% extends "main/base.html" %} {% block title %}ホーム{% endblock %} {% block
 content %}
-<img
-    src="https://res.cloudinary.com/hkg08nm4g/image/upload/v1654205956/main.jpg"
-    class="w-full object-cover"
-/>
+<picture>
+    <source
+        srcset="
+            https://res.cloudinary.com/hkg08nm4g/image/upload/v1659344241/PCwebsite-main_wdwkkg.avif
+        "
+        type="image/avif"
+    />
+    <source
+        srcset="
+            https://res.cloudinary.com/hkg08nm4g/image/upload/v1659344253/PCwebsite-main_lf42an.webp
+        "
+        type="image/webp"
+    />
+    <img
+        src="https://res.cloudinary.com/hkg08nm4g/image/upload/v1654205956/main.jpg"
+        alt="Description of Photo"
+        class="w-full object-cover"
+    />
+</picture>
 <div class="container mx-auto max-w-5xl px-7">
     <div class="row mt-5">
         <h1
@@ -20,10 +35,21 @@ content %}
                     rel="noopener noreferrer"
                 >
                     <div class="overflow-hidden">
-                        <img
-                            class="transition-all duration-700 group-hover:scale-[1.2]"
-                            src="{{item.image_url}}"
-                        />
+                        <picture>
+                            <source
+                                srcset="{{item.avif_url}}"
+                                type="image/avif"
+                            />
+                            <source
+                                srcset="{{item.webp_url}}"
+                                type="image/webp"
+                            />
+                            <img
+                                class="transition-all duration-700 group-hover:scale-[1.2]"
+                                src="{{item.image_url}}"
+                                alt="Description of Photo"
+                            />
+                        </picture>
                     </div>
                     <div class="group py-5">
                         <h5
