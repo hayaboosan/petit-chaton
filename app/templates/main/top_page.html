@@ -20,11 +20,11 @@
 </picture>
 <div class="container mx-auto max-w-5xl px-7">
     <div class="row mt-5">
-        <h1
+        <h3
             class="my-6 flex items-center font-petitEn text-2xl text-[#ABAC70] before:mr-4 before:h-[1px] before:grow before:bg-[#ABAC70] before:content-[''] after:ml-4 after:h-[1px] after:grow after:bg-[#ABAC70] after:content-[''] md:px-6 md:text-3xl"
         >
             COLLECTION
-        </h1>
+        </h3>
         <div class="grid grid-cols-2 md:gap-20 md:px-24">
             {% for item in items %}
             <div class="group col-span-full mx-auto bg-white md:col-span-1">
@@ -51,11 +51,11 @@
                         </picture>
                     </div>
                     <div class="group py-5">
-                        <h5
+                        <h4
                             class="mb-2 font-petitEn text-2xl tracking-tight text-[#333]"
                         >
                             {{item.title}}
-                        </h5>
+                        </h4>
                         <p class="mb-3 font-normal text-[#333]">
                             {{item.text.replace("\n", "<br />") | safe}}
                         </p>
