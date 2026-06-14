@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '') + '/';
+
+const amazonStore =
+  'https://www.amazon.co.jp/stores/PetitChaton%EF%BC%88%E3%83%97%E3%83%81%E3%82%B7%E3%83%A3%E3%83%88%E3%83%B3%EF%BC%89/page/42B28375-5641-4A6C-8635-CDDB565AC645?ref_=ast_bln';
+const instagram = 'https://www.instagram.com/petitchaton_pc/';
+
+const products = [
+  {
+    name: 'BUTTERFLY NECKLACE',
+    img: 'PCwebsite-PC002',
+    alt: 'BUTTERFLY NECKLACE — 蝶と猫をあしらったティアドロップ型のネックレス',
+    href: 'https://www.amazon.co.jp/dp/B0B1CNF1WT?ref=myi_title_dp',
+    desc: '輝く天然石をあしらった美しい蝶々と、その姿に見惚れる愛らしい猫が描かれたデザインです。上品なティアドロップ型が、優美な雰囲気を演出してくれます。このジュエリーは、自然の美しさと猫の可憐さを組み合わせたもので、目を惹く存在になることでしょう。',
+  },
+  {
+    name: 'MOONLIT NECKLACE',
+    img: 'PCwebsite-PC003',
+    alt: 'MOONLIT NECKLACE — 三日月に座る猫とハートをあしらったネックレス',
+    href: 'https://www.amazon.co.jp/dp/B0BLYG2Y1Y?ref=myi_title_dp',
+    desc: '猫が可愛らしく三日月に座り、そのそばに寄り添うハートが描かれたロマンティックなモチーフは、特別な人へのプレゼントにぴったりです。愛情にあふれたデザインは、二人の絆を象徴するかのよう。大切な人への贈り物としてはもちろん、自分へのご褒美としても、この素敵なジュエリーをお楽しみください。',
+  },
+];
+---
+
+<Layout>
+  <header class="site-header">
+    <h1 class="brand">
+      <img
+        src={`${base}images/PC-logo-W.gif`}
+        width="595"
+        height="105"
+        alt="Petit Chaton（プチシャトン）｜猫モチーフのジュエリーブランド"
+      />
+    </h1>
+    <nav class="header-nav" aria-label="外部リンク">
+      <a href={amazonStore}>
+        <img src={`${base}images/icon-shop.gif`} width="203" height="38" alt="オンラインショップ（Amazon）" />
+      </a>
+      <a href={instagram}>
+        <img src={`${base}images/icon-instagram.gif`} width="171" height="38" alt="Instagram" />
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <picture>
+        <source srcset={`${base}images/PCwebsite-main.avif`} type="image/avif" />
+        <source srcset={`${base}images/PCwebsite-main.webp`} type="image/webp" />
+        <img
+          src={`${base}images/PCwebsite-main.jpg`}
+          width="1400"
+          height="700"
+          alt="猫モチーフのネックレスのコレクションイメージ"
+          fetchpriority="high"
+        />
+      </picture>
+    </div>
+
+    <section class="section" aria-labelledby="collection-title">
+      <h2 class="section-title" id="collection-title">COLLECTION</h2>
+      <div class="collection-grid">
+        {
+          products.map((p) => (
+            <a class="product" href={p.href}>
+              <picture>
+                <source srcset={`${base}images/${p.img}.avif`} type="image/avif" />
+                <source srcset={`${base}images/${p.img}.webp`} type="image/webp" />
+                <img src={`${base}images/${p.img}.jpg`} width="700" height="700" alt={p.alt} loading="lazy" />
+              </picture>
+              <h3>{p.name}</h3>
+              <p>{p.desc}</p>
+              <span class="more">more &gt;</span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="concept-title">
+      <h2 class="section-title" id="concept-title">CONCEPT</h2>
+      <p class="concept-text">
+        「Petit Chaton（プチシャトン）」とは、フランス語で「小さな愛らしい子猫」という意味を持ちます。子猫のように無邪気で魅力的な瞳であなたを見つめるキャットモチーフのジュエリーを展開します。そのかわいらしさに思わず心奪われ、見ているだけで幸せな気持ちになれるようなデザインが特徴です。まるで可愛い子猫と一緒にいるかのような、ふんわりとした雰囲気を大切にし、あなたのそばにずっと置いておきたくなるようなジュエリーをお届けいたします。
+      </p>
+      <picture>
+        <source srcset={`${base}images/PCwebsite-concept.avif`} type="image/avif" />
+        <source srcset={`${base}images/PCwebsite-concept.webp`} type="image/webp" />
+        <img
+          class="concept-img"
+          src={`${base}images/PCwebsite-concept.jpg`}
+          width="1006"
+          height="330"
+          alt="子猫とジュエリーのコンセプトイメージ"
+          loading="lazy"
+        />
+      </picture>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy;Petit Chaton</small>
+  </footer>
+</Layout>
