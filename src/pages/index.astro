@@ -36,10 +36,10 @@ const products = [
       />
     </h1>
     <nav class="header-nav" aria-label="外部リンク">
-      <a href={amazonStore}>
+      <a href={amazonStore} target="_blank" rel="noopener noreferrer">
         <img src={`${base}images/icon-shop.gif`} width="203" height="38" alt="オンラインショップ（Amazon）" />
       </a>
-      <a href={instagram}>
+      <a href={instagram} target="_blank" rel="noopener noreferrer">
         <img src={`${base}images/icon-instagram.gif`} width="171" height="38" alt="Instagram" />
       </a>
     </nav>
@@ -65,7 +65,7 @@ const products = [
       <div class="collection-grid">
         {
           products.map((p) => (
-            <a class="product" href={p.href}>
+            <a class="product" href={p.href} target="_blank" rel="noopener noreferrer">
               <picture>
                 <source srcset={`${base}images/${p.img}.avif`} type="image/avif" />
                 <source srcset={`${base}images/${p.img}.webp`} type="image/webp" />
